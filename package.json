@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "latest",
-    "@types/react": "latest",
+    "@types/react": "^18.2.24",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "eslint": "latest",

@@ -20,7 +20,7 @@ const Navbar = () => {
           Dev <span className="text-primary-500">Flow</span>
         </p>
       </Link>
-      <GlobalSearch/>
+      <GlobalSearch />
       <div className="flex-between gap-5">
         <Theme />
         <SignedIn>
@@ -37,7 +37,7 @@ const Navbar = () => {
           />
         </SignedIn>
 
-        <MobileNav></MobileNav>
+        <MobileNav />
       </div>
     </nav>
   );

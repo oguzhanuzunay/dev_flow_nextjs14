@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.25.1",
+    "@clerk/nextjs": "^4.25.4",
     "@hookform/resolvers": "^3.3.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
@@ -19,7 +19,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@tinymce/tinymce-react": "^4.3.0",
     "class-variance-authority": "^0.7.0",
-    "clerk": "^0.6.1",
+    "clerk": "^0.8.3",
     "clsx": "^2.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
@@ -33,6 +33,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "^7.47.0",
+    "svix": "^1.13.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"

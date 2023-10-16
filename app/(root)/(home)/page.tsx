@@ -6,107 +6,11 @@ import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
 import Link from "next/link";
 import NoResult from "@/components/shared/NoResult";
+import { getQuestions } from "@/lib/actions/question.action";
 
-const questions = [
-  {
-    _id: 1,
-    title:
-      "The Lightning Component c:LWC_PizzaTracker generated invalid output for field status. Error How to solve this",
-    tags: [
-      { _id: 1, name: "javascript" },
-      { _id: 2, name: "react.js" },
-      { _id: 3, name: "invalid fields" },
-      { _id: 4, name: "salesforce" },
-    ],
-    author: {
-      _id: 1,
-      name: "David",
-      picture: "/assets/icons/avatar.svg",
-    },
-    upvotes: 1200,
-    views: 2000,
-    answers: [
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-    ],
-    createdAt: new Date("October 10, 2023 20:29:00"),
-  },
-  {
-    _id: 2,
-    title:
-      "The Lightning Component c:LWC_PizzaTracker generated invalid output for field status. Error How to solve this",
-    tags: [
-      { _id: 1, name: "javascript" },
-      { _id: 2, name: "react.js" },
-      { _id: 3, name: "invalid fields" },
-      { _id: 4, name: "salesforce" },
-    ],
-    author: {
-      _id: 1,
-      name: "David",
-      picture: "/assets/icons/avatar.svg",
-    },
-    upvotes: 1200,
-    views: 2000,
-    answers: [
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-      {
-        /* Add answer objects here */
-      },
-    ],
-    createdAt: new Date("October 11, 2023 20:29:00"),
-  },
-  {
-    _id: 3,
-    title:
-      "The Lightning Component c:LWC_PizzaTracker generated invalid output for field status. Error How to solve this",
-    tags: [
-      { _id: 1, name: "javascript" },
-      { _id: 2, name: "react.js" },
-      { _id: 3, name: "invalid fields" },
-      { _id: 4, name: "salesforce" },
-    ],
-    author: {
-      _id: 1,
-      name: "David",
-      picture: "/assets/icons/avatar.svg",
-    },
-    upvotes: 1200,
-    views: 2000,
-    answers: [
-      {
-        /* Add answer objects here */
-      },
-    ],
-    createdAt: new Date("january 11, 2023 20:29:00"),
-  },
-];
+export default async function Home() {
+  const result = await getQuestions({});
 
-export default function Home() {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -136,8 +40,8 @@ export default function Home() {
       <HomeFilters />
 
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length !== 0 ? (
-          questions.map((question) => (
+        {result.questions.length !== 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               _id={question._id}
               title={question.title}

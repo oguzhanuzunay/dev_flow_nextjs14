@@ -4,8 +4,13 @@ import Question from "@/database/question.model";
 import { connectToDatabase } from "../mongoose";
 import User from "@/database/user.model";
 import Tag from "@/database/tag.model";
-import { CreateQuestionParams, GetQuestionsParams } from "./shared.types";
+import {
+  CreateQuestionParams,
+  GetQuestionByIdParams,
+  GetQuestionsParams,
+} from "./shared.types";
 import { revalidatePath } from "next/cache";
+import Answer from "@/database/answer.model";
 
 export async function getQuestions(params: GetQuestionsParams) {
   try {
@@ -65,4 +70,29 @@ export async function createQuestion(params: CreateQuestionParams) {
 
     revalidatePath(path);
   } catch (error) {}
+}
+
+export async function getQuestionById(params: GetQuestionByIdParams) {
+  try {
+    connectToDatabase();
+
+    const { questionId } = params;
+
+    const question = await Question.findById(questionId)
+      .populate({
+        path: "tags",
+        model: Tag,
+        select: "name _id",
+      })
+      .populate({
+        path: "author",
+        model: User,
+        select: "username picture clerkId",
+      });
+
+    return question;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }

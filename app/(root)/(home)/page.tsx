@@ -1,6 +1,6 @@
 import HomeFilters from "@/components/home/HomeFilters";
 import QuestionCard from "@/components/home/cards/QuestionCard";
-import Filters from "@/components/shared/Filters";
+import Filter from "@/components/shared/Filter";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
@@ -30,8 +30,8 @@ export default async function Home() {
           placeHolder="Search Questions"
           otherClasses="flex-1"
         />
-        <Filters
-          placeHolder="Select Filter"
+        <Filter
+          placeHolder="Select a Filter"
           filterList={HomePageFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
           containerClasses="hidden max-md:flex "

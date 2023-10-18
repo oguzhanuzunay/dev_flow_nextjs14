@@ -20,7 +20,7 @@ interface Props {
   containerClasses?: string;
 }
 
-const Filters = ({
+const Filter = ({
   placeHolder,
   filterList,
   otherClasses,
@@ -53,4 +53,4 @@ const Filters = ({
   );
 };
 
-export default Filters;
+export default Filter;

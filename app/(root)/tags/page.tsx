@@ -1,4 +1,4 @@
-import Filters from "@/components/shared/Filters";
+import Filter from "@/components/shared/Filter";
 import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { UserFilters } from "@/constants/filters";
@@ -8,7 +8,6 @@ import React from "react";
 
 const Page = async () => {
   const result = await getAllTags({});
-
 
   return (
     <>
@@ -21,8 +20,8 @@ const Page = async () => {
           placeHolder="Search for amazing minds"
           otherClasses="flex-1"
         />
-        <Filters
-          placeHolder="Select Filter"
+        <Filter
+          placeHolder="Select a Filter"
           filterList={UserFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px] max-sm:w-full"
           containerClasses="flex "

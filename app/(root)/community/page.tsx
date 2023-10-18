@@ -1,5 +1,5 @@
 import UserCard from "@/components/home/cards/UserCard";
-import Filters from "@/components/shared/Filters";
+import Filter from "@/components/shared/Filter";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { UserFilters } from "@/constants/filters";
 import { getAllUsers } from "@/lib/actions/user.action";
@@ -20,8 +20,8 @@ const Page = async () => {
           placeHolder="Search for amazing minds"
           otherClasses="flex-1"
         />
-        <Filters
-          placeHolder="Select Filter"
+        <Filter
+          placeHolder="Select a Filter"
           filterList={UserFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px] max-sm:w-full"
           containerClasses="flex "

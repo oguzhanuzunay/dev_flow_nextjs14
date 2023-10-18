@@ -19,6 +19,7 @@ export async function getUserById(params: GetUserByIdParams) {
 
     const { userId } = params;
     const user = await User.findOne({ clerkId: userId });
+    
 
     return user;
   } catch (error) {

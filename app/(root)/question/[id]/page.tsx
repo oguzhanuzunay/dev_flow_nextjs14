@@ -43,7 +43,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             </p>
           </Link>
           <Votes
-            type="question"
+            type="Question"
             itemId={JSON.stringify(result._id)}
             userId={JSON.stringify(mongoUser._id)}
             upvotes={result.upvotes.length}
@@ -96,7 +96,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
       <AllAnswers
         questionId={result._id}
-        userId={JSON.stringify(mongoUser._id)}
+        userId={mongoUser._id}
         totalAnswers={result.answers.length}
       />
 
